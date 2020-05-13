@@ -2,19 +2,32 @@
 // where each subarray is of length size
 
 function arrChunk(array, size){
-  // Solution #1
+  // // Solution #1
+  // const chunked = [];
+
+  // for (let element of array){
+  //   // For checking if array is empty or at size limit
+  //   const isAtLimit = chunked[chunked.length-1];
+
+  //   if(!isAtLimit || isAtLimit.length === size){
+  //     chunked.push([element])
+  //   }
+  //   else{
+  //     isAtLimit.push(element);
+  //   }
+  // }
+
+  // return chunked;
+
+
+  // Solution #2
   const chunked = [];
+  let index = 0;
 
-  for (let element of array){
-    const last = chunked[chunked.length-1];
-    console.log()
-
-    if(!last || last.length === size){
-      chunked.push([element])
-    }
-    else{
-      last.push(element);
-    }
+  while (index < array.length) {
+    chunked.push(array.slice(index, index + size));
+    // Moves index to next chunk
+    index += size;
   }
 
   return chunked;
