@@ -2,22 +2,22 @@
 // where each subarray is of length size
 
 function arrChunk(array, size){
-  // // Solution #1
-  // const chunked = [];
+  // Solution #1
+  const chunked = [];
 
-  // for (let element of array){
-  //   // For checking if array is empty or at size limit
-  //   const isAtLimit = chunked[chunked.length-1];
+  for (let element of array){
+    // For checking if array is empty or at size limit
+    const isAtLimit = chunked[chunked.length-1];
 
-  //   if(!isAtLimit || isAtLimit.length === size){
-  //     chunked.push([element])
-  //   }
-  //   else{
-  //     isAtLimit.push(element);
-  //   }
-  // }
+    if(!isAtLimit || isAtLimit.length === size){
+      chunked.push([element])
+    }
+    else{
+      isAtLimit.push(element);
+    }
+  }
 
-  // return chunked;
+  return chunked;
 
 
   // Solution #2
